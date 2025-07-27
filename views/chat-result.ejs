@@ -1,0 +1,69 @@
+
+<%- include("partials/header") %>
+
+<style>
+  .chat-output-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #fefefe;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    font-family: sans-serif;
+  }
+
+  .chat-output-container h1, h3 {
+    text-align: center;
+  }
+
+  .chat-output-container p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+    white-space: pre-wrap;
+  }
+
+  .chat-output-container form,
+  .chat-output-container a {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  }
+
+  .chat-output-container button {
+    padding: 12px 24px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .chat-output-container a {
+    margin-left: 20px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #4CAF50;
+    padding-top: 12px;
+  }
+</style>
+
+<div class="chat-output-container">
+  <h1>Generated Blog Post</h1>
+
+  <h3><em>Prompt:</em></h3>
+  <p><%= prompt %></p>
+
+  <h3><em>Blog Post:</em></h3>
+  <p><%= blogContent.replace(/\n/g, "<br>") %></p>
+
+  <form action="/save-ai-post" method="POST">
+    <input type="hidden" name="title" value="<%= prompt %>">
+    <input type="hidden" name="content" value="<%= blogContent.replace(/"/g, '&quot;') %>">
+    <button type="submit">📥 Use This in a Post</button>
+  </form>
+
+  <a href="/chat">🔁 Try Another</a>
+</div>
+
+<%- include("partials/footer") %>

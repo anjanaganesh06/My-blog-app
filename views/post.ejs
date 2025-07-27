@@ -1,0 +1,26 @@
+
+<%- include("partials/header") %>
+
+<h1><%= post.title %></h1>
+<p><%= post.content %></p>
+
+<h3>🔗 Share this post:</h3>
+<div>
+    <a 
+    href="https://twitter.com/intent/tweet?text=<%= encodeURIComponent(post.title + ': ' + post.content.substring(0, 300) + '...') %>&url=<%= encodeURIComponent(post.id) %>" 
+    target="_blank">
+    🐦 Twitter
+  </a>
+  
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=<%= encodeURIComponent(post.title + ': ' + post.content.substring(0, 100) + '...') %>&url=<%= encodeURIComponent(post.id) %>" 
+    target="_blank">
+    💼 LinkedIn
+  </a> |
+  <a href="https://api.whatsapp.com/send?text=<%= encodeURIComponent(post.title + ': ' + post.content.substring(0, 100) + '...' ) %>&url=<%= encodeURIComponent(post.id) %>" %>" target="_blank">
+    📱 WhatsApp
+  </a>
+</div>
+
+<a href="/">← Back to Home</a>
+
+<%- include("partials/footer") %>

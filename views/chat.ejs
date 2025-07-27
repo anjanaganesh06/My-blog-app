@@ -1,0 +1,9 @@
+
+<%- include("partials/header") %>
+<h1>Ask the Blog Bot</h1>
+<form action="/chat" method="POST">
+  <label for="prompt">Enter your blog prompt:</label><br>
+  <textarea name="prompt" rows="6" cols="60" required></textarea><br>
+  <button type="submit">Generate Blog Post</button>
+</form>
+<%- include("partials/footer") %>

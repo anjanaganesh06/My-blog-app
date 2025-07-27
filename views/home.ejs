@@ -1,0 +1,39 @@
+<%- include("partials/header") %>
+
+<style>
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin-top: 50px;
+    background-color: transparent !important; /* 👈 override anything inherited */
+  }
+
+  .nav-button {
+    padding: 14px 28px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 220px;
+  }
+
+  .nav-button:hover {
+    background-color: #45a049;
+  }
+</style>
+
+
+<h1 style="text-align: center;">My Blog</h1>
+
+<div class="button-container">
+  <button class="nav-button" onclick="window.location.href='/posts'">📚 View All Posts</button>
+  <button class="nav-button" onclick="window.location.href='/chat'">🤖 Chatbot</button>
+  <button class="nav-button" onclick="window.location.href='/compose'">✍️ Compose New Post</button>
+</div>
+
+<%- include("partials/footer") %>
