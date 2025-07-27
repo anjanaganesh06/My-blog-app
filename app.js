@@ -207,7 +207,7 @@ app.post("/chat", requireLogin, async (req, res) => {
     const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
       method: "POST",
       headers: {
-        "Authorization": "Bearer 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",
+        "Authorization": "Bearer sk-or-<YOUR-API-KEY>",
         "Content-Type": "application/json",
         "HTTP-Referer": "http://localhost:3000",  // Optional
         "X-Title": "BlogWithChatbot",            // Optional
